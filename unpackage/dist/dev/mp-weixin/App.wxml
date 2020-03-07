@@ -1,0 +1,1 @@
+<view>123<tabar-nav vue-id="1" bind:__l="__l"></tabar-nav></view>

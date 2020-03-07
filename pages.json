@@ -1,0 +1,147 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		
+		{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "童装"
+				// "app-plus": {
+				// 	"titleNView": {
+				// 		"type": "transparent",
+				// 		"searchInput": {
+				// 			"backgroundColor": "rgba(231, 231, 231,.7)",
+				// 			"borderRadius": "16px",
+				// 			"placeholder": "请输入地址 如：大钟寺",
+				// 			"disabled": true,
+				// 			"placeholderColor": "#606266"
+				// 		},
+				// 		"buttons": [{
+				// 				"fontSrc": "/static/yticon.ttf",
+				// 				"text": "\ue60d",
+				// 				"fontSize": "26",
+				// 				"color": "#303133",
+				// 				"float": "left",
+				// 				"background": "rgba(0,0,0,0)"
+				// 			},
+				// 			{
+				// 				"fontSrc": "/static/yticon.ttf",
+				// 				"text": "\ue744",
+				// 				"fontSize": "27",
+				// 				"color": "#303133",
+				// 				"background": "rgba(0,0,0,0)",
+				// 				"redDot": true
+				// 			}
+				// 		]
+				// 	}
+				// }
+			}
+		},
+		{
+			"path": "pages/shop/shop",
+			"style": {
+				"navigationBarTitleText": "购物车"
+			}
+		},
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		},
+		{
+			"path": "pages/class/class",
+			"style": {
+				"navigationBarTitleText": "分类"
+			}
+		},{
+            "path" : "pages/detail/detail",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/order/order",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/createOrder/createOrder",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/pay/pay",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/adAddress/adAddress",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/addressManage/addressManage",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/cart/cart",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/login/login",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/list/list",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/paySuccess/paySuccess",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/history/history",
+            "style" : {}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#F8F8F8"
+		// "navigationStyle": "custom",
+		
+
+	},
+	"tabBar": {
+		// "height": "50px",
+		// "fontSize": "10px",
+		// "iconWidth": "24px",
+		// "spacing": "3px",
+		"color": "#333",
+		"selectedColor": "#d81e06",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/home/home",
+				"iconPath": "/static/home.png",
+				"selectedIconPath": "/static/home-d.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/class/class",
+				"iconPath": "/static/class.png",
+				"selectedIconPath": "/static/class-d.png",
+				"text": "分类"
+			},
+			{
+				"pagePath": "pages/shop/shop",
+				"iconPath": "/static/shop.png",
+				"selectedIconPath": "/static/shop-d.png",
+				"text": "购物车"
+			},
+
+			{
+				"pagePath": "pages/user/user",
+				"iconPath": "/static/user.png",
+				"selectedIconPath": "/static/user-d.png",
+				"text": "我的"
+			}
+		]
+	}
+
+}

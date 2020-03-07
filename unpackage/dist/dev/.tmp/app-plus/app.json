@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/shop/shop",
+    "pages/user/user",
+    "pages/class/class",
+    "pages/detail/detail",
+    "pages/order/order",
+    "pages/createOrder/createOrder",
+    "pages/pay/pay",
+    "pages/adAddress/adAddress",
+    "pages/addressManage/addressManage",
+    "pages/cart/cart",
+    "pages/login/login",
+    "pages/list/list",
+    "pages/paySuccess/paySuccess",
+    "pages/history/history"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F8F8F8",
+    "navigationStyle": "custom",
+    "navigationBarShadow": {}
+  },
+  "tabBar": {
+    "height": "50px",
+    "fontSize": "10px",
+    "iconWidth": "24px",
+    "spacing": "3px",
+    "color": "#333",
+    "selectedColor": "#d81e06",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "/static/home.png",
+        "selectedIconPath": "/static/home-d.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/class/class",
+        "iconPath": "/static/class.png",
+        "selectedIconPath": "/static/class-d.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "iconPath": "/static/shop.png",
+        "selectedIconPath": "/static/shop-d.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "/static/user.png",
+        "selectedIconPath": "/static/user-d.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "nvueCompiler": "uni-app",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "uniDemo",
+  "compilerVersion": "2.5.1",
+  "usingComponents": {}
+}

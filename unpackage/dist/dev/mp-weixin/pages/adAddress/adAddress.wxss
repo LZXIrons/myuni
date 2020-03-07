@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+uni-page.data-v-0b9f51ba, page.data-v-0b9f51ba {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.list.data-v-0b9f51ba {
+  color: #909399;
+}
+.list .item.data-v-0b9f51ba {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    padding: 20rpx 30rpx;
+    border-bottom: 2rpx solid #f0f0f0;
+    background-color: #fff;
+}
+.list .item .r .tit.data-v-0b9f51ba {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      color: #303133;
+}
+.list .item .r .tit .def.data-v-0b9f51ba {
+        padding: 1rpx 6rpx;
+        border: 2rpx solid #FA436A;
+        text-align: center;
+        margin-right: 10rpx;
+        font-size: 24rpx;
+        color: #FA436A;
+}
+.list .item .r .u-box.data-v-0b9f51ba {
+      margin: 20rpx 0 0;
+}
+.list .item .r .u-box text.data-v-0b9f51ba {
+        margin-right: 20rpx;
+}
+.list .item .icon-xiugai.data-v-0b9f51ba {
+      font-size: 44rpx;
+}
+.btn.data-v-0b9f51ba {
+  position: fixed;
+  bottom: 0;
+  left: calc(50% - 345rpx);
+  width: 690rpx;
+  height: 80rpx;
+  margin: 80rpx  auto;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #FA436A;
+}
+
