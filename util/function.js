@@ -182,9 +182,9 @@ const getStore = name => {
  */
 const setStore = (name, content) => {
   if (!name) return;
-  if (typeof content !== 'string') {
-    content = JSON.stringify(content);
-  }
+  // if (typeof content !== 'string') {
+  //   content = JSON.stringify(content);
+  // }
   uni.setStorageSync(name, content)
   // window.localStorage.setItem(name, content);
 }

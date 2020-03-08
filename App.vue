@@ -11,13 +11,7 @@
 		// globalData:{
 			
 		// },
-		onLaunch: function() {
-			let str = this.$removeStore("name");
-			console.log('App Launch')
-			uni.onTabBarMidButtonTap(function() {
-				console.log('点击了中间按钮1')
-			})
-			let self = this
+		onLaunch: async function() {
 			uni.getSystemInfo({
 				success: function(res) {
 					// self.globalData.stautsBarHeight =res.statusBarHeight
@@ -40,6 +34,21 @@
 					console.log(res.platform);
 				}
 			});
+			
+			let res = await this.$uniAsync.getSetting()
+			/**
+			 * 是否授权过，授权则获取用户信息
+			 */
+			if (res.authSetting['scope.userInfo']) {
+				let userInfo = uni.getStorageSync('userInfo') || '';
+				if (!userInfo.nickName) {
+					let data = await this.$uniAsync.getUserInfo()
+					if (data) {
+						this.$setStore('userInfo', data.userInfo)
+					}
+				}
+				console.log(res)
+			}
 
 		},
 		onShow: function() {

@@ -5,9 +5,9 @@
 			<view class="user-box">
 				<view class="u-top">
 					<view class="pic">
-						<image src="../../static/nologin.png" mode="scaleToFill"></image>
+						<!-- <image src="../../static/nologin.png" mode="scaleToFill"></image> -->
+						<image :src="userInfo?userInfo.avatarUrl : '../../static/nologin.png'" mode="scaleToFill"></image>
 						<button type="default" open-type="getUserInfo" @getuserinfo="getUserInfo">点击登录</button>
-						<!-- <button type="default" open-type="getUserInfo" @click="getUserInfo">点击登录</button> -->
 					</view>
 					<view class="bot">
 						<view class="item">
@@ -36,36 +36,36 @@
 						<view class="item" @click="goOrder(0)">
 							<image src="../../static/topay.png" mode=""></image>
 							<view class="">
-														 待付款
+								待付款
 							</view>
 						</view>
 						<view class="item" @click="goOrder(1)">
 							<image src="../../static/fahuo.png" mode=""></image>
 							<view class="">
-														 待发货
+								待发货
 							</view>
 						</view>
 						<view class="item" @click="goOrder(2)">
 							<image src="../../static/shouhuo.png" mode=""></image>
 							<view class="">
-														 待收货
+								待收货
 							</view>
 						</view>
 						<view class="item" @click="goOrder(3)">
 							<image src="../../static/pj.png" mode=""></image>
 							<view class="">
-														 待评价
+								待评价
 							</view>
 						</view>
 						<view class="item" @click="goOrder(4)">
 							<image src="../../static/shouhou.png" mode=""></image>
 							<view class="">
-														退款
+								退款
 							</view>
 						</view>
 					</view>
 				</view>
-				<navigator  class="flex row" url="../history/history">
+				<navigator class="flex row" url="../history/history">
 					<view class="">
 						浏览记录
 					</view>
@@ -121,37 +121,37 @@
 	export default {
 		data() {
 			return {
-				userInfo:{}
+				userInfo: null
 			};
 		},
-		globalData:{
-			userInfo:null
+
+		async onLoad() {
+			this.userInfo = this.$getStore('userInfo')
 		},
-		onLoad() {
-			// this.goLogin()
-		},
-		components:{
+		components: {
 			uniNavBar
 		},
-		methods:{
-			getUserInfo({
+		methods: {
+			async getUserInfo({
 				detail
-			}){
-				this.$log(detail)
-				if(detail.userInfo){
-					let userInfo = detail.userInfo;
-					this.$setStore('userInfo',userInfo)
+			}) {
+				let res = await this.$uniAsync.login()
+				console.log(res)
+				if (res.code) {
+					this.userInfo = detail.userInfo;
+					console.log(this.userInfo)
+					this.$setStore('userInfo', this.userInfo)
+					// let res = await this.$uniAsync.getSetting()
 				}
-				
-				
+
 			},
-			goOrder(state){
+			goOrder(state) {
 				uni.navigateTo({
-					url:'../order/order?state='+state
+					url: '../order/order?state=' + state
 				})
 			}
 		},
-		
+
 	}
 </script>
 
@@ -166,58 +166,72 @@
 	$lineHight:1.5;
 	$textColor:#909399;
 	$paddingBox:20rpx 30rpx;
-	.container{
+
+	.container {
+
 		// position: absolute;
 		// top: 0;
 		// left: 0;
 		// width: 100%;
 		// height: 100%;.
-		.u-top{
+		.u-top {
 			padding-top: 40rpx;
 			background-color: #fff;
 		}
-		.pic{
+
+		.pic {
 			text-align: center;
-			img,image{
-				width:140rpx;
+
+			img,
+			image {
+				width: 140rpx;
 				height: 140rpx;
 				margin: 0 auto 20rpx;
 			}
-			button{
+
+			button {
 				width: 220rpx;
 				color: #353535;
 				// height: 200rpx;
 			}
 		}
-		.bot{
+
+		.bot {
 			display: flex;
 			margin-top: 60rpx;
-			border-top:2px solid #eee;
+			border-top: 2px solid #eee;
 			padding: 30rpx 0;
-			.item{
+
+			.item {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				flex: 1;
 				text-align: center;
-			
-				
+
+
 			}
-			.b-left{
+
+			.b-left {
 				border-left: 2rpx solid #eee;
 			}
 		}
-		.my-order{
+
+		.my-order {
 			margin: 20rpx 0;
 			background-color: #FFFFFF;
-			.list{
+
+			.list {
 				display: flex;
-				.item{
+
+				.item {
 					flex: 1;
 					padding: 20rpx;
 					text-align: center;
 					font-size: 24rpx;
-					img,image{
+
+					img,
+					image {
 						width: 70rpx;
 						height: 70rpx;
 					}
@@ -225,10 +239,12 @@
 			}
 		}
 	}
-	.row{
+
+	.row {
 		border-bottom: 2rpx solid #eee;
 	}
-	.flex{
+
+	.flex {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;

@@ -31,7 +31,8 @@
 .container .pic.data-v-1e205e9f {
   text-align: center;
 }
-.container .pic ._img.data-v-1e205e9f, .container .pic image.data-v-1e205e9f {
+.container .pic ._img.data-v-1e205e9f,
+  .container .pic image.data-v-1e205e9f {
     width: 140rpx;
     height: 140rpx;
     margin: 0 auto 20rpx;
@@ -84,7 +85,8 @@
       text-align: center;
       font-size: 24rpx;
 }
-.container .my-order .list .item ._img.data-v-1e205e9f, .container .my-order .list .item image.data-v-1e205e9f {
+.container .my-order .list .item ._img.data-v-1e205e9f,
+      .container .my-order .list .item image.data-v-1e205e9f {
         width: 70rpx;
         height: 70rpx;
 }

@@ -251,14 +251,17 @@
 			setInterval(() => {
 				self.downTime = self.$formatTime.countDown("2020/12/31 00:00:00")
 			}, 1000)
-			this.gteGoods();
+			this.getGoods().then((res) =>{
+				console.log(res)
+			})
 			
 		},
 		onShow(){
-
+			// this.test()
 
 		},
 		methods: {
+			
 			getArea(jd,wd){
 				// 坐标转化为详细地址
 				qqmapsdk.reverseGeocoder({
@@ -274,30 +277,30 @@
 				        }
 				    });
 			},
-			async gteGoods() {
-				
+			async getGoods() {
 				if(!this.isLoad) return
-				this.isLoad = false
-				const [error, data] = await this.$awaitWrap(api.goods({
-					method: 'post',
-					query: {
-						categoryId: 69310,
-						nameLike: '',
-						page: 1,
-						pageSize: 10
-					}
-				}))
-				this.isLoad = true
-				// const [error, data] = await api.vb()
-				//  console.log('err',error)
-				//  console.log('data', data)
-				if (data[1]) {
-					data[1].data.data.forEach(item => {
-						this.goods.push(item)
+				try{
+					this.isLoad = false
+					const data = await api.goods({
+						method: 'post',
+						query: {
+							categoryId: 69310,
+							nameLike: '',
+							page: 1,
+							pageSize: 10
+						}
 					})
-					
-				} else {
-					 console.log('err',error)
+					this.isLoad = true
+					if (data.code === 0) {
+						data.data.forEach(item => {
+							this.goods.push(item)
+						})
+						return data
+					} else {
+						 console.log(data.msg)
+					}
+				}catch(err){
+					console.log(err)
 				}
 			},
 			onRight() {
@@ -318,7 +321,7 @@
 			}
 		},
 		onReachBottom(){
-			this.gteGoods()
+			this.getGoods()
 		}
 	}
 </script>

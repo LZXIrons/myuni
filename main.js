@@ -4,6 +4,10 @@ import store from './store'
 import Util from './util'
 import tips from './util/tip'
 import formatTime from './util/time.js'
+// uni异步化
+import uniAsync from '@/js_sdk/i-uni-async/uni-async.js'
+// 设置到prototype
+Vue.prototype.$uniAsync = uniAsync
 //import wxConfig from 'util/wxconfig.js'
 import iconfont from './static/iconfont.css'
 

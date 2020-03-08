@@ -5,9 +5,25 @@
 	},
 	"setting": {
 		"urlCheck": false,
+		"es6": false,
+		"enhance": false,
 		"postcss": true,
-		"es6": true,
-		"minified": true
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"bundle": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.2",
@@ -43,6 +59,7 @@
 					"id": -1,
 					"name": "pages/user/user",
 					"pathName": "pages/user/user",
+					"query": "",
 					"scene": null
 				}
 			]
